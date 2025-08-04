@@ -1,0 +1,40 @@
+﻿@model ProjectForm.Models.UsersModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Register Home";
+}
+
+<div class="container-register">
+    <div class="title text-center">
+        <h2>Register</h2>
+    </div>
+
+    <form asp-action="Register" method="post">
+        <div class="register-row-name-surname" style="text-align:center">
+            <input asp-for="name" type="text" placeholder="Name" />
+            <input asp-for="surname" type="text" placeholder="Surname" />
+        </div>
+        <div class="register-email-password">
+            <input asp-for="email" type="email" placeholder="Email" />
+            <input asp-for="password" type="password" placeholder="Password" />
+            <input type="password" name="confirmPassword" placeholder="Password Again" />
+        </div>
+        <div class="gender">
+            <p><b>Gender:</b></p>
+            <input type="radio" asp-for="gender" value="true" id="male" />
+            <label for="male">Male</label>
+
+            <input type="radio" asp-for="gender" value="false" id="female" />
+            <label for="female">Female</label>
+        </div>
+        <div class="input-box text-center">
+            <input type="submit" value="Register" />
+        </div>
+    </form>
+
+    <div class="login-link text-center">
+        <br />
+        <p>Do have an account? <a asp-controller="Home" asp-action="Index">Login</a></p>
+    </div>
+</div>
